@@ -6,11 +6,8 @@ import org.openqa.selenium.support.PageFactory;
 
 public class MainPage {
 
-    private WebDriver webDriver;
-
     public MainPage(WebDriver webDriver) {
         PageFactory.initElements(webDriver,this);
-        this.webDriver = webDriver;
     }
 
     @FindBy(xpath = ".//input[@name='q']")
