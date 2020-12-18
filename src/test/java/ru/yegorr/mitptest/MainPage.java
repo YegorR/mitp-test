@@ -1,7 +1,6 @@
 package ru.yegorr.mitptest;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -14,10 +13,11 @@ public class MainPage {
         this.webDriver = webDriver;
     }
 
-    @FindBy(xpath = ".//input[@id='text']")
+    @FindBy(xpath = ".//input[@name='q']")
     private WebElement queryLine;
 
-    public void printQuery(String text) {
+    public void printQuery(String text) throws InterruptedException {
         queryLine.sendKeys(text);
+        queryLine.sendKeys(Keys.ENTER);
     }
 }
